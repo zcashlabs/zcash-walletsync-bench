@@ -1,0 +1,280 @@
+{
+ "network": "main",
+ "source": {
+  "window": [
+   3560000,
+   3560199
+  ],
+  "rule": "txids: non-coinbase shielded txs by (height, index), evenly spaced, then transparent-only the same way; taddrs: P2PKH outputs seen 1-3 times in the window, sorted by hash160"
+ },
+ "first_sync": {
+  "tip": 3559999,
+  "default_blocks": 10000,
+  "note": "fixed 'tip' for a restore; birthday = tip - blocks + 1"
+ },
+ "txids": [
+  {
+   "txid": "7de0e07f6a196f1bb8497ba6f8ac681f98c0875b66fd008f5bfe53fd010dfc00",
+   "height": 3560001,
+   "index": 1,
+   "pools": "I"
+  },
+  {
+   "txid": "00b7c718fddf5eb51bd5d1e446e29f1a11be44a441e2e1903435031440100c0a",
+   "height": 3560001,
+   "index": 4,
+   "pools": "I"
+  },
+  {
+   "txid": "beec259400073a029062c801af71304788de091a1265a8c1befb764dacd49d2c",
+   "height": 3560001,
+   "index": 8,
+   "pools": "IT"
+  },
+  {
+   "txid": "0e0b760c51707a1e031b00de3d98d9994be47c426beb04c5a41bf7bca6725e06",
+   "height": 3560002,
+   "index": 5,
+   "pools": "IT"
+  },
+  {
+   "txid": "d2bbbf53d06413e085e5e47c5d862e13f311ac9d898217e58c49dfea5ba554e1",
+   "height": 3560003,
+   "index": 6,
+   "pools": "I"
+  },
+  {
+   "txid": "646d979d19f8dfb96728e16658803eddb6a401222d9ad320dee630e86f1fdeb1",
+   "height": 3560005,
+   "index": 2,
+   "pools": "I"
+  },
+  {
+   "txid": "774ea2e2e5c794f7aafa630ea927e0213896920ba6692ec39458a9c21b7e5709",
+   "height": 3560006,
+   "index": 1,
+   "pools": "I"
+  },
+  {
+   "txid": "1c920ff4cbc56aae45a47f1421e5d74164145aa34df069c7e3900992cbbf3ae9",
+   "height": 3560013,
+   "index": 5,
+   "pools": "IT"
+  },
+  {
+   "txid": "61727863ee0d8651c8755be2b4b7523d0e116b70d6a254a0e3858df4185b6b23",
+   "height": 3560023,
+   "index": 2,
+   "pools": "IT"
+  },
+  {
+   "txid": "17388c411be26f5f20bbb6a8bd9f13b13e125420ca54366473749b61131d95d0",
+   "height": 3560029,
+   "index": 2,
+   "pools": "IT"
+  },
+  {
+   "txid": "387d641ce8c3eadc9b95666cb378da2b1b58900b5a3c6a9a13f43250b2168f3d",
+   "height": 3560040,
+   "index": 2,
+   "pools": "IT"
+  },
+  {
+   "txid": "b47a767244e273c32f3684348fa2fea27985cf573832c96581446cdaa609f09d",
+   "height": 3560048,
+   "index": 5,
+   "pools": "IT"
+  },
+  {
+   "txid": "daa1efeea4f0471812397bdc66db45d486ab1f94bb4eff77c81e6d6af016fa0f",
+   "height": 3560066,
+   "index": 3,
+   "pools": "IT"
+  },
+  {
+   "txid": "f1829521fb51863e0539b59784814a68d6f83124e1e2c7d42208dd33d3fb63d9",
+   "height": 3560073,
+   "index": 2,
+   "pools": "IT"
+  },
+  {
+   "txid": "e64f1921951a340983d3f89c885ca48dbb40b337b95372142c2f3e6d03a0f322",
+   "height": 3560084,
+   "index": 1,
+   "pools": "I"
+  },
+  {
+   "txid": "9c813e968c78446621d54103d4af255f261f62c6112649abe8368b8dcc81b4b7",
+   "height": 3560098,
+   "index": 2,
+   "pools": "OI"
+  },
+  {
+   "txid": "f44029a9b0cea364c23a5f72fbbbf4ea90e77d144711eae37bb8cccd7c7bda60",
+   "height": 3560103,
+   "index": 6,
+   "pools": "IT"
+  },
+  {
+   "txid": "50f6ecbb56ec757dede1fa0797637826bc6e3ef1a4c7540e4a94f8ea49e47591",
+   "height": 3560104,
+   "index": 4,
+   "pools": "I"
+  },
+  {
+   "txid": "44ddd91bda4f8bf938cc0ad77216dc6d0e0fef1eef9be21bd65d7682e089e296",
+   "height": 3560111,
+   "index": 5,
+   "pools": "IT"
+  },
+  {
+   "txid": "02aceba58f79727ae60796c69708bfa1e2023ec8bac38ca7c3d537274ff38a1a",
+   "height": 3560131,
+   "index": 1,
+   "pools": "I"
+  },
+  {
+   "txid": "69f7dc41eb8626eecb30af13fcc6ca0a55cdf3443d185a04200c5b5880b2c3c5",
+   "height": 3560135,
+   "index": 3,
+   "pools": "I"
+  },
+  {
+   "txid": "b0de797d2f03a9dfdf7cab981b6835deb14d8b150e0042b166f335517c6a8019",
+   "height": 3560143,
+   "index": 1,
+   "pools": "I"
+  },
+  {
+   "txid": "dc2a10918c92f76685fc5443aab7b8f2d0e2db7753c27a73f54155dde0323939",
+   "height": 3560143,
+   "index": 7,
+   "pools": "I"
+  },
+  {
+   "txid": "4821830af4ee3cb7ef49c229e2dd1dfabad5274a9621f1a7f4cfd71a874f4439",
+   "height": 3560151,
+   "index": 4,
+   "pools": "OI"
+  },
+  {
+   "txid": "f3e0ff5684ec06312db158238e68e9cd827bad319f4e8b02f753319d2867fd91",
+   "height": 3560154,
+   "index": 2,
+   "pools": "IT"
+  },
+  {
+   "txid": "d97cc33f1d096cb389478ea7e4f2962de4eb8db28be4066cefbba5079b27c8b6",
+   "height": 3560154,
+   "index": 8,
+   "pools": "I"
+  },
+  {
+   "txid": "bb4fe94e6198937ec03e49827abc7edd7c0f6acb8fc6c2f2c43fe014f96d1892",
+   "height": 3560160,
+   "index": 2,
+   "pools": "ST"
+  },
+  {
+   "txid": "3510e55e12d01d7c0cf8b48d4ef640a0534c5489ce3abb28163b0651301af3d2",
+   "height": 3560172,
+   "index": 4,
+   "pools": "IT"
+  },
+  {
+   "txid": "764296b6e16d17924ffbe9b1128f67bd8def195f79de5e51d0b48dcd658a970d",
+   "height": 3560175,
+   "index": 5,
+   "pools": "I"
+  },
+  {
+   "txid": "8fe6fb4a6f4f52f952467eb0388c5ea1752bf50d9bedcced369e801f9265f1bd",
+   "height": 3560187,
+   "index": 5,
+   "pools": "IT"
+  },
+  {
+   "txid": "86b86ef35bcae68cdca6b8eac590e27a7bd1f209968f6d55cf4c531c255254e8",
+   "height": 3560001,
+   "index": 9,
+   "pools": "T"
+  },
+  {
+   "txid": "0e162041f95e21e580837eaba922a37eefb545906a1e544350f81d30c17a9080",
+   "height": 3560011,
+   "index": 10,
+   "pools": "T"
+  },
+  {
+   "txid": "0e4041b8dbedd356da9779156a6be01ec810015897645dc1bdd356a0363288a1",
+   "height": 3560029,
+   "index": 3,
+   "pools": "T"
+  },
+  {
+   "txid": "1b20d0652feb88afaa26be02b36cc7af5c7ebb0e54dad17181eb7e75d4a13deb",
+   "height": 3560048,
+   "index": 6,
+   "pools": "T"
+  },
+  {
+   "txid": "0b2963ed77c983fca13ffde0eaa9b36d51d881351b301348e5bc2b2f9755290c",
+   "height": 3560071,
+   "index": 1,
+   "pools": "T"
+  },
+  {
+   "txid": "4bbb4110e4a93e3188ac3464fccc1d04311fd687812dc39417c4e1492f320f3c",
+   "height": 3560104,
+   "index": 2,
+   "pools": "T"
+  },
+  {
+   "txid": "b38d42a841fc258b2878ab816512c11b096b379a3fab8860a6f5d7f8c5db4cf9",
+   "height": 3560122,
+   "index": 2,
+   "pools": "T"
+  },
+  {
+   "txid": "4571d17ef9606b8bd6bd066aeb120b05f88c1b0f8a3f1b2a2d29d6defa9c2944",
+   "height": 3560140,
+   "index": 1,
+   "pools": "T"
+  },
+  {
+   "txid": "f3fa60401506460ff91bb5496ce0a4d242ef04b394ec51230dc20dabc2c471ec",
+   "height": 3560166,
+   "index": 2,
+   "pools": "T"
+  },
+  {
+   "txid": "77eb65c597085e0761750831b4b27104a2a7255ea8d9cd828866ce7c7e5626f2",
+   "height": 3560175,
+   "index": 8,
+   "pools": "T"
+  }
+ ],
+ "taddrs_active": [
+  "t1HuWyevrjcrQj9sqaeeGkcoKSDiv783mJq",
+  "t1HwdBjmeLfdcio64NAvAQ8zUnwdeVRKYUK",
+  "t1JsSqAKwqByFGtqfqgnmG5WhxcfA855452",
+  "t1JyB9cKYsXT93rxc6JmoPyELgzqYYn824Y",
+  "t1K1wPfAP9bsFX45xtEAJBh7NXa9vD7NmWs",
+  "t1K36RxUWqKAq8RJueDwiVLCjvY8cSc1fXd",
+  "t1K5hvUDrGU88N2KHhHh4nJPehAGTh372vQ",
+  "t1KFh1UesL3LpnqdqN4Zzh8faP3z7kfCHQa",
+  "t1KbKkQ7WisJF52sSepMjYokQJbkJCJ1i3C",
+  "t1KeQZCS9an6Ue4Mh8DUstfZEWn1mXomZXa"
+ ],
+ "taddrs_unused": [
+  "t1W1LCp6BvNSbKnuj5p58NMy2CpQTcjnLMj",
+  "t1L7FdqgokKekVoVNCtsqMDJoGKHEZUWigN",
+  "t1fbttgVZUAnoRW6xDbu6D4pDg7vb5TZsjF",
+  "t1MCV53VfrZRHDj57Cq4G7JTMijDGFUDQuw",
+  "t1Y6BrKmrJegZQbWbAXyyVHhd3FxyATGCfj"
+ ],
+ "transparent_range": [
+  3550000,
+  3560199
+ ]
+}

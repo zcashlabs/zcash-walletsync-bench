@@ -1,0 +1,136 @@
+/* Look of the ztreamer benchmark site (site.css + benchmarks.css), plus the run page's own parts.
+   site_plots.py draws the figures with the same tokens: keep the two in step. */
+:root{
+  color-scheme:dark;
+  --bg:#171415;--panel:#211d1e;--rule:#363132;--chart-axis:#4a4445;
+  --ink:#f4f4f4;--dim:#a3a3a3;--faint:#6f6a6b;--text-emphasis:var(--ink);
+  --good:#3fb68b;--bad:#ef6f5e;
+  --display:"Sora",ui-sans-serif,system-ui,sans-serif;
+  --sans:"Manrope",ui-sans-serif,system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;
+  --radius:.25rem;
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{min-height:100svh;display:flex;flex-direction:column;background:var(--bg)}
+a{color:inherit;text-decoration:none;text-underline-offset:.25em}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:var(--radius)}
+::selection{background:var(--ink);color:var(--bg)}
+.wrap{width:min(100% - 2rem,1152px);margin-inline:auto}
+[hidden]{display:none!important}
+
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
+header .wrap{height:4.5rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.brand{display:flex;align-items:center;gap:.8rem;color:var(--ink)}
+.brand:hover{text-decoration:none}
+.brand img{width:40px;height:40px;display:block}
+.brand b{font:700 1.15rem/1 var(--display);letter-spacing:-.01em}
+.brand span{font:500 .625rem/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--dim);padding-left:.8rem;border-left:1px solid var(--rule)}
+header nav{display:flex;flex-wrap:wrap;gap:1.75rem;font:500 .6875rem/1.6 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+header nav a:hover{color:var(--ink);text-decoration:none}
+main{flex:1}
+h1{font:800 clamp(2.4rem,6vw,4.5rem)/1.05 var(--display);letter-spacing:-.035em}
+footer{border-top:1px solid var(--rule)}
+footer .wrap{padding:2rem 0 2.5rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;font:500 .6875rem/1.6 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+footer a:hover{color:var(--ink);text-decoration:none}
+footer .by{display:flex;align-items:center;gap:.75rem;color:var(--ink)}
+footer .by img{width:40px;height:40px}
+
+.benchmark-report{padding:4rem 0 5rem}
+.benchmark-report h1{margin:1rem 0 1.5rem}
+.benchmark-report h2{font:700 clamp(1.35rem,3vw,1.8rem)/1.2 var(--display);letter-spacing:-.02em;margin-bottom:1.25rem}
+.benchmark-report h3{font:500 .8rem/1.6 var(--mono);color:var(--ink);margin:2.25rem 0 .25rem}
+.benchmark-report h3 span{color:var(--dim);font-size:.72rem;margin-left:.6rem}
+.benchmark-report p{margin:.8rem 0;line-height:1.65;max-width:72ch}
+.benchmark-report a{text-decoration:underline;text-underline-offset:.2em}
+.benchmark-report a:hover{color:var(--text-emphasis)}
+.benchmark-report .eyebrow{font:500 .6875rem/1.6 var(--mono);color:var(--dim);letter-spacing:.22em;text-transform:uppercase}
+.benchmark-report .sub{color:var(--dim);max-width:65rem}
+.benchmark-report .sub strong{color:var(--ink);font-weight:500}
+.benchmark-report .report-nav{position:sticky;top:4.5rem;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;gap:1.25rem;flex-wrap:wrap;padding:1rem 0;border-bottom:1px solid var(--rule);font:500 .6875rem/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.benchmark-report .report-nav a{text-decoration:none}
+.benchmark-report .report-nav a:hover{color:var(--ink)}
+.benchmark-report section{margin:3rem 0;scroll-margin-top:8.5rem}
+.benchmark-report code{font:.85em var(--mono)}
+.benchmark-report .note{border-left:2px solid var(--rule);padding:.5rem 1rem;color:var(--dim);font-size:.85rem}
+.benchmark-report .bullets{margin:.8rem 0 .8rem 1.2rem;line-height:1.65;max-width:80ch}
+.benchmark-report .bullets li{margin:.45rem 0}
+.benchmark-report .bullets strong{font-weight:600}
+.benchmark-report .bullets q{color:var(--dim);font:.82em var(--mono)}
+
+/* Headline cards */
+.benchmark-report .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:2rem 0;border-bottom:1px solid var(--rule)}
+.benchmark-report .card{padding:1.5rem 1.25rem 1.75rem 0;font:.8rem/1.6 var(--mono)}
+.benchmark-report .card b{display:block;font:700 clamp(1.8rem,3vw,3rem)/1.15 var(--display);letter-spacing:-.03em;margin:.75rem 0 .4rem;color:var(--text-emphasis);font-variant-numeric:tabular-nums}
+.benchmark-report .card span{display:block;color:var(--dim);font-size:.72rem}
+.benchmark-report .card .who{color:var(--ink);font-size:.78rem;margin-bottom:.2rem}
+.benchmark-report .cards-6 .card:nth-child(3n+2),.benchmark-report .cards-6 .card:nth-child(3n+3){border-left:1px solid var(--rule);padding-left:1.25rem}
+.benchmark-report .cards-6 .card:nth-child(n+4){border-top:1px solid var(--rule)}
+
+/* Figures */
+.benchmark-report figure{margin:1.5rem 0}
+.benchmark-report figure img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:var(--radius);background:var(--bg)}
+.benchmark-report .downloads{font:.72rem/1.7 var(--mono);color:var(--dim);margin-top:.5rem}
+
+/* Tables */
+.benchmark-report .table-wrap{overflow:auto;border:1px solid var(--rule);border-radius:var(--radius);margin:1rem 0}
+.benchmark-report table{border-collapse:collapse;width:100%;font:.73rem/1.5 var(--mono);font-variant-numeric:tabular-nums}
+.benchmark-report td,.benchmark-report th{padding:.7rem .75rem;border-bottom:1px solid var(--rule);text-align:right;vertical-align:top}
+.benchmark-report tbody tr:last-child>*{border-bottom:0}
+.benchmark-report th{font-weight:500;color:var(--dim);white-space:nowrap}
+.benchmark-report td:first-child,.benchmark-report th:first-child{text-align:left}
+.benchmark-report tbody tr:hover{background:var(--panel)}
+.benchmark-report td em,.benchmark-report th em{display:block;color:var(--faint);font-style:normal;font-size:.66rem}
+.benchmark-report th[scope=row] em{display:inline;margin-left:.2rem}
+.benchmark-report table.kv td{text-align:left}
+.benchmark-report table.kv thead{display:none}
+.benchmark-report table.kv td:first-child{color:var(--dim);width:9rem}
+.benchmark-report table.setup td,.benchmark-report table.setup th{text-align:left}
+.benchmark-report table.setup td em{display:block}
+.benchmark-report .dot{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--c);margin-right:.5rem;vertical-align:.05em}
+.benchmark-report th .svc{color:var(--ink)}
+.benchmark-report .good{color:var(--good)}
+.benchmark-report .err{color:var(--bad);font-weight:500}
+
+/* Scoreboard: median, ratio to the best, and a bar relative to the row's largest median. */
+.benchmark-report table.scoreboard{table-layout:fixed;min-width:44rem}
+.benchmark-report table.scoreboard thead th:first-child{width:34%}
+.benchmark-report table.scoreboard th[scope=row]{color:var(--ink);font-weight:400;white-space:normal}
+.benchmark-report table.scoreboard th[scope=row] em{color:var(--faint)}
+.benchmark-report .sc{position:relative;padding-bottom:1rem}
+.benchmark-report .sc .v{display:block;color:var(--dim);font-size:.8rem}
+.benchmark-report .sc .r{display:block;color:var(--faint);font-size:.66rem}
+.benchmark-report .sc.best .v{color:var(--ink);font-weight:500}
+.benchmark-report .sc.best .r{color:var(--ink)}
+.benchmark-report .sc.tie .v{color:var(--ink)}
+.benchmark-report .sc .bar{position:absolute;right:.75rem;bottom:.55rem;height:3px;border-radius:2px;width:calc((100% - 1.5rem) * var(--w) / 100);background:var(--c);opacity:.45}
+.benchmark-report .sc .warn{display:block;color:var(--bad);font-size:.66rem}
+.benchmark-report .sc.best .bar,.benchmark-report .sc.tie .bar{opacity:1}
+
+/* Step details */
+.benchmark-report .picker{display:flex;align-items:center;gap:.8rem;width:fit-content;max-width:100%;margin:1.5rem 0 .5rem;font:.75rem/1.5 var(--mono);color:var(--dim);text-transform:uppercase;letter-spacing:.12em}
+.benchmark-report .picker select{font:.85rem/1.5 var(--mono);color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:var(--radius);padding:.6rem .8rem;max-width:100%;text-transform:none;letter-spacing:0}
+.benchmark-report .step{margin:1.5rem 0 2.5rem}
+.benchmark-report .step-title{font:700 1.1rem/1.3 var(--display)!important;margin:0 0 .3rem!important;letter-spacing:-.01em}
+.benchmark-report .meta{font:.72rem/1.6 var(--mono);color:var(--dim);max-width:none}
+.benchmark-report table.stats td span.best{color:var(--ink);font-weight:500}
+.benchmark-report table.stats td span{color:var(--dim)}
+.benchmark-report table.stats td span.tie{color:var(--ink)}
+.benchmark-report table.stats td:first-child{color:var(--ink);white-space:nowrap}
+
+.benchmark-report details{margin:1.25rem 0}
+.benchmark-report details>summary{cursor:pointer;width:fit-content;text-transform:uppercase;letter-spacing:.12em}
+.benchmark-report details>summary:hover{color:var(--ink)}
+
+@media(max-width:760px){
+ header .wrap{height:auto;padding:1rem 0;flex-direction:column;align-items:flex-start;gap:.6rem}
+ header nav{gap:1.1rem}
+ .benchmark-report{padding-top:2rem}
+ .benchmark-report .report-nav{position:static}
+ .benchmark-report .cards,.benchmark-report .cards-6{grid-template-columns:1fr}
+ .benchmark-report .cards-6 .card{border-left:0!important;padding-left:0!important}
+ .benchmark-report .cards-6 .card+.card{border-top:1px solid var(--rule)}
+ footer .wrap{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

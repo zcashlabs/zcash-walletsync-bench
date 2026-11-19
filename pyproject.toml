@@ -1,0 +1,32 @@
+[project]
+name = "zcash-walletsync-bench"
+version = "0.1.0"
+description = "Benchmark for lightwalletd-protocol (CompactTxStreamer) servers that replays the sync traffic of Zcash wallets"
+readme = "README.md"
+authors = [{ name = "Zcash Labs" }]
+requires-python = ">=3.11"
+dependencies = ["grpcio==1.85.1", "protobuf==7.36.2", "numpy==2.4.6", "matplotlib==3.11.2", "psutil==7.2.2"]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0", "grpcio-tools==1.85.1"]
+
+[project.urls]
+Homepage = "https://zcashlabs.com"
+Repository = "https://github.com/zcashlabs/zcash-walletsync-bench"
+
+[project.scripts]
+zcash-walletsync-bench = "zcash_walletsync_bench.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+zcash_walletsync_bench = ["data/*.json", "fonts/*", "site_assets/*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]
